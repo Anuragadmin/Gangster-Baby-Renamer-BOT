@@ -1,6 +1,6 @@
 """
 Apache License 2.0
-Copyright (c) 2022 @PYRO_BOTZ 
+Copyright (c) 2022  
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -16,9 +16,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-Telegram Link : https://t.me/LazyDeveloper 
-Repo Link : https://github.com/LazyDeveloperr/Gangster-Baby-Renamer-BOT
-License Link : https://github.com/LazyDeveloperr/Gangster-Baby-Renamer-BOT/blob/main/LICENSE
 """
 
 from asyncio import sleep
@@ -37,10 +34,8 @@ async def start(client, message):
     user = message.from_user
     if not await db.is_user_exist(user.id):
         await db.add_user(user.id)             
-    txt=f"👋 Hello Developer {user.mention} \n\nI am an Advance file Renamer and file Converter BOT with permanent and custom thumbnail support.\n\nSend me any video or document !"
+    txt=f"👋 Hello {user.mention} \n\nI am an Advance file Renamer and file Converter BOT with permanent and custom thumbnail support.\n\nSend me any video or document !"
     button=InlineKeyboardMarkup([[
-        InlineKeyboardButton("😈 Developer 😈", callback_data='dev')
-        ],[
         InlineKeyboardButton('📢 Updates', url='https://t.me/LazyDeveloper'),
         InlineKeyboardButton('🤝 Support', url='https://t.me/LazyPrincessSupport')
         ],[
@@ -56,7 +51,7 @@ async def start(client, message):
         InlineKeyboardButton("📝Admin-TG", url='https://t.me/LazyDeveloperr'),
         InlineKeyboardButton("📝Admin-Channel", url='https://t.me/LazyDeveloper')
         ]
-        ])
+        ]) 
     if START_PIC:
         await message.reply_photo(START_PIC, caption=txt, reply_markup=button)       
     else:
